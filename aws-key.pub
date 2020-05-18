@@ -1,0 +1,2 @@
+#PUB Key String
+#ssh-keygen -y -f aws-key.pem >> aws-key.pub
