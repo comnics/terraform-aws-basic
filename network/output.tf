@@ -1,7 +1,7 @@
-output "nolazo-subnet-c-id" {
-  value = "${aws_subnet.nolazo-subnet-c.id}"
+output "comnic-subnet-c-id" {
+  value = "${aws_subnet.comnic-subnet-c.id}"
 }
  
-output "nolazo-sg-id" {
-  value = "${aws_security_group.nolazo-sg.id}"
+output "comnic-sg-id" {
+  value = "${aws_security_group.comnic-sg.id}"
 }

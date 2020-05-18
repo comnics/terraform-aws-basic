@@ -1,23 +1,23 @@
 #routes
-resource "aws_internet_gateway" "nolazo-gateway" {
-  vpc_id = aws_vpc.nolazo-vpc.id
+resource "aws_internet_gateway" "comnic-gateway" {
+  vpc_id = aws_vpc.comnic-vpc.id
   tags = {
-    Name = "nolazo-gateway"
+    Name = "comnic-gateway"
   }
 }
 
-resource "aws_route_table" "nolazo-route-table" {
-  vpc_id = aws_vpc.nolazo-vpc.id
+resource "aws_route_table" "comnic-route-table" {
+  vpc_id = aws_vpc.comnic-vpc.id
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.nolazo-gateway.id
+    gateway_id = aws_internet_gateway.comnic-gateway.id
   }
   tags = {
-    Name = "nolazo-route-table"
+    Name = "comnic-route-table"
   }
 }
 
 resource "aws_route_table_association" "my-subnet-association" {
-  subnet_id      = aws_subnet.nolazo-subnet-c.id
-  route_table_id = aws_route_table.nolazo-route-table.id
+  subnet_id      = aws_subnet.comnic-subnet-c.id
+  route_table_id = aws_route_table.comnic-route-table.id
 }
